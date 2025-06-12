@@ -34,6 +34,192 @@
 <script>
 import GameIntro from './components/GameIntro.vue'
 
+caminhoDireita: {
+    title: 'O Caminho da Sombra',
+    text: 'Você avança pela Rua, estranhamente com partes destruídas, outras quase inteiras. As casas carcomidas exibem vãos escuros onde antes havia portas e janelas. Você enxerga a rua graças à lua e o silêncio pesa. O que você faz?',
+    background: '/Imagens_Caminho_Direita/caminhoDireita.jpg',
+    choices: [
+      { text: 'Marcenaria de Dois Andares', nextScene: 'marcenaria' },
+      { text: 'Santuário', nextScene: 'santuario' },
+      { text: 'Caçamba do Carro', nextScene: 'cacamba' },
+      { text: 'Avançar pela rua', nextScene: 'ruaFinal' }
+    ],
+    back: true
+  },
+  marcenaria: {
+    title: 'Marcenaria de Dois Andares',
+    text: 'Fachada de madeira com uma pequena placa acima pendurada escrita "Marcenaria". Dentro, máquinas e ferramentas cobertas de poeira e serragem no chão.',
+    background: '/Imagens_Caminho_Direita/marcenaria.jpg',
+    choices: [
+      { text: 'Ir mais adentro', nextScene: 'decisoes' },
+      { text: 'Armário empoeirado', nextScene: 'armario' },
+      { text: 'Voltar para o caminho', nextScene: 'caminhoDireita' }
+    ],
+  },
+  decisoes: {
+    title: 'Escolhas',
+    text: 'Você se vê frente a duas portas de madeira fechadas, e à esquerda uma escada para o sótão',
+    background: '/Imagens_Caminho_Direita/decisoes.jpg',
+    choices: [
+      { text: 'Porta à esquerda (banheiro)', nextScene: 'banheiro' },
+      { text: 'Escada à esquerda sótão', nextScene: 'sotao' },
+      { text: 'Porta à direita despensa', nextScene: 'despensa' },
+      { text: 'Voltar', nextScene: 'marcenaria' },
+    ]
+  },
+  banheiro: {
+    title: 'Banheiro da Marcenaria',
+    text: 'Um banheiro sujo e com um líquido preto estranho no chão próximo à banheira. O que você faz?',
+    background: '/Imagens_Caminho_Direita/banheiro.jpg',
+    choices: [
+      { text: 'Ir à pia', nextScene: 'piaBanheiro' },
+      { text: 'Voltar', nextScene: 'decisoes' }
+    ]
+  },
+  piaBanheiro: {
+    title: 'Frente à pia do banheiro',
+    text: 'Um espelho que estranhamente não reflete, e sobre a pia, uma fita cassete. O que você faz?',
+    background: '/Imagens_Caminho_Direita/piaBanheiro.jpg',
+    choices: [
+      { text: 'Analisar etiqueta da fita', nextScene: 'analiseFita' },
+      { text: 'Tocar fita (se tiver gravador)', nextScene: 'tocarFita' },
+      { text: 'Voltar', nextScene: 'banheiro' }
+    ]
+  },
+  analiseFita: {
+    title: 'Etiqueta da Fita',
+    text: 'Você lê: "Eles estão sempre aqui." Uma pontada de memória surge, mas nada acontece além disso.',
+    background: '/Imagens_Caminho_Direita/analiseFita.jpg',
+    choices: [
+      { text: 'Voltar', nextScene: 'piaBanheiro' }
+    ]
+  },
+  tocarFita: {
+    title: 'Gravação na Fita',
+    text: 'A voz sussurra: "Você precisa lembrar…" O eco corta o silêncio.',
+    background: '/Imagens_Caminho_Direita/banheiro.jpg',
+    choices: [
+      { text: 'Voltar', nextScene: 'piaBanheiro' }
+    ]
+  },
+  sotao: {
+    title: 'Sótão da Marcenaria',
+    text: 'Feixe de luz entra por uma janela. E um baú enferrujado ao fundo e muitos destroços do que já fora um sótão amplo.',
+    background: '/Imagens_Caminho_Direita/sotao.jpg',
+    choices: [
+      { text: 'Vasculhar o baú', nextScene: 'bauVelho' },
+      { text: 'Voltar', nextScene: 'decisoes' }
+    ]
+  },
+  bauVelho: {
+    title: 'Baú Suspeito',
+    text: 'Você olha dentro e tem três itens. Qual sua escolha?',
+    background: '/Imagens_Caminho_Direita/bauVelho.jpg',
+    choices: [
+      { text: 'Pegar Moeda Velha', nextScene: 'pegouMoeda' },
+      { text: 'Pegar Fotografia', nextScene: 'pegouFoto' },
+      { text: 'Pegar Gravador', nextScene: 'pegouGravador' },
+      { text: 'Voltar', nextScene: 'sotao' }
+    ]
+  },
+  pegouMoeda: {
+    title: 'Moeda Velha',
+    text: 'Você guarda a Moeda Velha.',
+    background: '/Imagens_Caminho_Direita/bauVelho.jpg',
+    choices: [
+      { text: 'Voltar', nextScene: 'bauVelho' }
+    ]
+  },
+  pegouFoto: {
+    title: 'Fotografia Não Revelada',
+    text: 'Você vê seu rosto ao lado de uma mulher e uma criança. Uma memória vaga surge.',
+    background: '/Imagens_Caminho_Direita/pegouFoto.jpg',
+    choices: [
+      { text: 'Voltar', nextScene: 'bauVelho' }
+    ]
+  },
+  pegouGravador: {
+    title: 'Gravador de Fita',
+    text: 'Você guarda o Gravador.',
+    background: '/Imagens_Caminho_Direita/pegouGravador.jpg',
+    choices: [
+      { text: 'Voltar', nextScene: 'bauVelho' }
+    ]
+  },
+  despensa: {
+    title: 'Despensa',
+    text: 'Você abre a porta e vê um vazio, logo sente um puxão invisível que acaba sugando você para a escuridão. Você morreu!',
+    background: '/Imagens_Caminho_Direita/despensa.png',
+    choices: [
+      { text: 'Voltar', nextScene: 'decisoes' }
+    ]
+  },
+  armario: {
+    title: 'Armário Empoeirado',
+    text: 'Prateleiras vazias e mofo. Nada de útil além de um porta-retrato.',
+    background: '/Imagens_Caminho_Direita/armario.jpg',
+    choices: [
+      { text: 'Analisar retrato', nextScene: 'retrato' },
+      { text: 'Voltar', nextScene: 'marcenaria' }
+    ]
+  },
+  retrato: {
+    title: 'Porta-retrato',
+    text: 'Um retrato do marceneiro que você conhecia e usava técnicas avançadas para moldar tudo que via.',
+    background: '/Imagens_Caminho_Direita/armario.jpg',
+    choices: [
+      { text: 'Voltar', nextScene: 'armario' }
+    ]
+  },
+  cacamba: {
+    title: 'Caçamba da caminhonete',
+    text: 'Carro abandonado e sujo com duas lanternas quebradas, poeira e folhas secas. Aparentemente nada de útil para pegar.',
+    background: '/Imagens_Caminho_Direita/cacamba.jpg',
+    choices: [
+      { text: 'Voltar', nextScene: 'caminhoDireita' }
+    ]
+  },
+  santuario: {
+    title: 'Santuário',
+    text: 'Bancos a esquerda e direita com um altar no fundo. E um ser humanoide magro e pálido ajoelhado de costas para você.',
+    background: '/Imagens_Caminho_Direita/santuario.jpg',
+    choices: [
+      { text: 'Aproximar-se no escuro', nextScene: 'fim2' },
+      { text: 'Atacar com faca (se tiver)', nextScene: 'fugaSantuario' }
+    ]
+  },
+  fim2: {
+    title: 'Morto pela criatura',
+    text: 'A criatura te ataca assim que se aproxima. Você acaba morto pela criatura!',
+    background: '/Imagens_Caminho_Direita/fim 2.jpg',
+    choices: [
+      { text: 'Voltar para o início do caminho da direita', nextScene: 'caminhoDireita' }
+    ]
+  },
+  fugaSantuario: {
+    title: 'Fuga do Santuário',
+    text: 'Você fere a criatura e foge para fora do santuário.',
+    background: '/Imagens_Caminho_Direita/santuario.jpg',
+    choices: [
+      { text: 'Voltar para o início do caminho da direita', nextScene: 'caminhoDireita' }
+    ]
+  },
+  ruaFinal: {
+    title: 'Rua Final',
+    text: 'A névoa se adensa formando um muro branco.',
+    background: '/Imagens_Caminho_Direita/ruaFinal.jpg',
+    choices: [
+      { text: 'Avançar pela névoa', nextScene: 'fim3' }
+    ]
+  },
+  fim3: {
+    title: 'Fim do Esquecimento',
+    text: 'N\'yarah o envolve em trevas; sua mente é consumida.',
+    background: '/Imagens_Caminho_Direita/ruaFinal.jpg',
+    choices: [
+      { text: 'Voltar para o início do caminho da direita', nextScene: 'caminhoDireita' }
+    ]
+  }
 export default {
   caminhoEsquerda: {
     title: 'Caminho da esquerda',
